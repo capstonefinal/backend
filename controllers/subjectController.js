@@ -42,7 +42,10 @@ const updateSubject = asyncHandler(async (req, res) => {
 })
 
 const deleteSubject = asyncHandler(async (req, res) => {
-    const subject = await Subject.findByIdAndRemove(req.params.subject)
+    // return res.status(200).json(req.body)
+
+    // return console.log(req.body);
+    const subject = await Subject.findByIdAndRemove(req.body.subjectId)
     return res.status(200).json(subject)
 })
 const getStudents = asyncHandler(async (req, res) => {

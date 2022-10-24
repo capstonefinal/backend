@@ -17,11 +17,11 @@ const {
 router.route('/')
     .get(protect, getSubjects)
     .post(protect, addSubject)
+    .delete(protect, deleteSubject)
 
 router.route('/:subject')
     .get(protect, getSubject)
     .patch(protect, updateSubject)
-    .delete(protect, deleteSubject)
 
 router.route('/:subject/students')
     .get(getStudents)

@@ -1,4 +1,11 @@
 const mongoose = require('mongoose')
+// const studentSchema = mongoose.Schema({
+//     studentName: String,
+//         studentId: {
+//             type: String,
+//             unique: true
+//         },
+// })
 
 const courseSchema = mongoose.Schema({
     courseName: {
@@ -17,7 +24,11 @@ const courseSchema = mongoose.Schema({
                 unique: true
             },
         }
-    ]
+    ],
+    // students: [{
+    //     type: mongoose.SchemaTypes.ObjectId,
+    //     ref: "Student"
+    // }],
 },
     {
         timestamps: true
@@ -25,3 +36,4 @@ const courseSchema = mongoose.Schema({
 )
 
 module.exports = mongoose.model('Course', courseSchema)
+// module.exports = mongoose.model('Student', studentSchema)

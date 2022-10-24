@@ -5,6 +5,10 @@ const attendanceSchema = mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         ref: "Course.students"
     },
+    subject: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "Subject"
+    },
     attendanceType: String,
     timeIn: Date,
     timeOut: Date
@@ -14,4 +18,4 @@ const attendanceSchema = mongoose.Schema({
     }
 )
 
-module.exports = mongoose.model('Subject', attendanceSchema)
+module.exports = mongoose.model('Attendance', attendanceSchema)
