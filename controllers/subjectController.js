@@ -4,7 +4,7 @@ const Subject = require('../models/subjectModel')
 const Course = require('../models/courseModel')
 
 const getSubjects = asyncHandler(async (req, res, next) => {
-    const subjects = await Subject.find({ user: req.user }).populate('course', ['courseName', 'yearLevel', 'students'])
+    const subjects = await Subject.find({ user: req.body.user??req.user }).populate('course', ['courseName', 'yearLevel', 'students'])
     const courses = await Course.find().select(['courseName', 'yearLevel'])
     if (subjects) {
         // return res.status(200).json(subjects)
